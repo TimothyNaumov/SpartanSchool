@@ -1,0 +1,15 @@
+name: SpartanSchool
+version: '1.0-SNAPSHOT'
+main: me.timothynaumov.spartanschool.SpartanSchool
+api-version: 1.16
+timeout-time: 99999
+commands:
+  spartanschool:
+    description: Start the Spartan School Minigame
+    usage: /<command>
+  balance:
+    description: Print out your current point balance
+    usage: /<command>
+  purchase:
+    description: Purchase items from the shop
+    usage: /<command> {snowball|shield|diamond_sword|golden_apple}
