@@ -1,5 +1,6 @@
 package me.timothynaumov.spartanschool;
 
+import me.timothynaumov.spartanschool.shop.Purchasable;
 import me.timothynaumov.spartanschool.shop.ShopItem;
 import me.timothynaumov.spartanschool.shop.item.Shield;
 import me.timothynaumov.spartanschool.shop.item.Snowball;
@@ -13,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 
 public class SpartanShop {
-    private static HashMap<String, ShopItem> itemMap;
+    private static HashMap<String, Purchasable> itemMap;
 
     static{
         itemMap = new HashMap<>();
@@ -28,7 +29,7 @@ public class SpartanShop {
             return false;
         }
 
-        ShopItem item = itemMap.get(itemName.toLowerCase());
+        Purchasable item = itemMap.get(itemName.toLowerCase());
         if(item == null){
             error.append("that item does not exist");
             return false;

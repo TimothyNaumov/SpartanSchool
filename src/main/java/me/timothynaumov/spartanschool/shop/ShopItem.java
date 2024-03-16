@@ -4,12 +4,11 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class ShopItem {
-    public int price;
+public class ShopItem extends Purchasable {
     public Material material;
 
     public ShopItem(int price, Material material){
-        this.price = price;
+        super(price);
         this.material = material;
     }
 
