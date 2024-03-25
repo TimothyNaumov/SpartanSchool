@@ -63,7 +63,7 @@ public class GameLogic {
         World world = Bukkit.getWorlds().get(0);
 
         enemyCount = 0;
-        waveCount = 1;
+        waveCount = 100;
         playerSpawnLocation = new Location(world, -691, 4, 136);
         enemySpawnLocation = new Location(world, -707, 6, 136);
 

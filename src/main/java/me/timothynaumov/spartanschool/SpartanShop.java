@@ -3,6 +3,7 @@ package me.timothynaumov.spartanschool;
 import me.timothynaumov.spartanschool.shop.Purchasable;
 import me.timothynaumov.spartanschool.shop.entity.IronGolem;
 import me.timothynaumov.spartanschool.shop.entity.Snowman;
+import me.timothynaumov.spartanschool.shop.entity.FightingWolf;
 import me.timothynaumov.spartanschool.shop.item.Shield;
 import me.timothynaumov.spartanschool.shop.item.Snowball;
 import org.bukkit.entity.Player;
@@ -20,6 +21,7 @@ public class SpartanShop {
         itemMap.put("snowball", new Snowball());
         itemMap.put("irongolem", new IronGolem());
         itemMap.put("snowman", new Snowman());
+        itemMap.put("wolf", new FightingWolf());
     }
 
     public static boolean purchase(Player player, String itemName, int quantity, StringBuilder error){
