@@ -1,18 +1,12 @@
 package me.timothynaumov.spartanschool;
 
 import me.timothynaumov.spartanschool.shop.Purchasable;
-import me.timothynaumov.spartanschool.shop.ShopEntity;
-import me.timothynaumov.spartanschool.shop.ShopItem;
 import me.timothynaumov.spartanschool.shop.entity.IronGolem;
+import me.timothynaumov.spartanschool.shop.entity.Snowman;
 import me.timothynaumov.spartanschool.shop.item.Shield;
 import me.timothynaumov.spartanschool.shop.item.Snowball;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
+
 
 import java.util.HashMap;
 
@@ -25,6 +19,7 @@ public class SpartanShop {
         itemMap.put("shield", new Shield());
         itemMap.put("snowball", new Snowball());
         itemMap.put("irongolem", new IronGolem());
+        itemMap.put("snowman", new Snowman());
     }
 
     public static boolean purchase(Player player, String itemName, int quantity, StringBuilder error){
