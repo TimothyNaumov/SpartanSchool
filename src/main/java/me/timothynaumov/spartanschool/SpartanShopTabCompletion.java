@@ -15,7 +15,7 @@ public class SpartanShopTabCompletion implements TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         Player player = (Player) sender;
         if (args.length == 1) {
-            List<String> arguments = new ArrayList<>(Arrays.asList("snowball", "shield", "diamond_sword", "golden_apple"));
+            List<String> arguments = new ArrayList<>(SpartanShop.itemMap.keySet());
             return arguments;
         } else if (args.length > 1) {
             List<String> arguments = new ArrayList<>();
