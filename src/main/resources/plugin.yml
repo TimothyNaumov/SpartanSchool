@@ -13,3 +13,9 @@ commands:
   purchase:
     description: Purchase items from the shop
     usage: /<command> {snowball|shield|diamond_sword|golden_apple}
+  gui:
+    description: Opens a GUI
+    usage: /<command>
+  shop:
+    description: Open the Spartan Shop to buy upgrades!
+    usage: /<command>

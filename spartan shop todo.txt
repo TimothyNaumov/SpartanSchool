@@ -1,0 +1,7 @@
+1. /shop should open an inventory called Spartan Shop
+2. Spartan shop should contain a section for purchasing items
+	with all our implemented items to purchase
+3. Spartan shop should contain a section for spawning entities
+	with all our implemented spawnable entities
+
+4. Have an item to close the shop

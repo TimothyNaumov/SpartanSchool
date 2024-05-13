@@ -10,16 +10,13 @@ public final class SpartanSchool extends JavaPlugin {
     public void onEnable() {
         instance = this;
         gameLogic = new GameLogic();
-        // Plugin startup logic
         getServer().getPluginManager().registerEvents(new SpartanEventHandlers(gameLogic), this);
-        getServer().getPluginManager().registerEvents(new GuiListener(), this);
-        getServer().getPluginManager().registerEvents(new ShopListener(), this);
+        getServer().getPluginManager().registerEvents(new ShopListener(gameLogic), this);
         getCommand("spartanschool").setExecutor(new SpartanCommandExecutor(gameLogic));
         getCommand("balance").setExecutor(new SpartanCommandExecutor(gameLogic));
         getCommand("purchase").setExecutor(new SpartanCommandExecutor(gameLogic));
         getCommand("purchase").setTabCompleter(new SpartanShopTabCompletion());
 
-        getCommand("gui").setExecutor(new GuiCommand());
         getCommand("shop").setExecutor(new ShopCommand());
     }
 

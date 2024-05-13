@@ -12,8 +12,11 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerExpChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -53,9 +56,9 @@ public class SpartanEventHandlers implements Listener {
         }
     }
     @EventHandler
-    public void onPlayerItemHeld(PlayerItemHeldEvent e){
+    public void onPlayerItemHeld(PlayerItemHeldEvent e) {
         //make every item in the players inventory unbreakable when they change items
-        for(ItemStack item : e.getPlayer().getInventory().getContents())
+        for (ItemStack item : e.getPlayer().getInventory().getContents())
             GameUtils.makeUnbreakable(item);
     }
 }
