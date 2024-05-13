@@ -4,7 +4,6 @@ me\timothynaumov\spartanschool\SpartanShopTabCompletion.class
 me\timothynaumov\spartanschool\shop\entity\FightingWolf.class
 me\timothynaumov\spartanschool\shop\entity\Snowman.class
 me\timothynaumov\spartanschool\GameLogic$1.class
-me\timothynaumov\spartanschool\GuiCommand.class
 me\timothynaumov\spartanschool\ArmorType.class
 me\timothynaumov\spartanschool\shop\ShopEntity.class
 me\timothynaumov\spartanschool\SpartanEventHandlers.class
@@ -21,5 +20,4 @@ me\timothynaumov\spartanschool\GameUtils$1.class
 me\timothynaumov\spartanschool\shop\entity\IronGolem.class
 me\timothynaumov\spartanschool\shop\item\Shield.class
 me\timothynaumov\spartanschool\SpartanShop.class
-me\timothynaumov\spartanschool\GuiListener.class
 me\timothynaumov\spartanschool\SpartanSchool.class

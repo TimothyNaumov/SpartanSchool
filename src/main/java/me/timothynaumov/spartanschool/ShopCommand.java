@@ -31,25 +31,33 @@ public class ShopCommand implements CommandExecutor {
         player.openInventory(inventory);
         player.setMetadata("OpenedSpartanShop", new FixedMetadataValue(SpartanSchool.getInstance(), "Spartan Shop"));
 
+        //Close Button
         ItemStack closeButton = new ItemStack(Material.BARRIER);
         ItemMeta closeMeta = closeButton.getItemMeta();
         closeMeta.setDisplayName(ChatColor.RED + "Close Spartan Shop");
         closeButton.setItemMeta(closeMeta);
 
-        ItemStack shieldButton = new ItemStack(Material.SHIELD);
-        ItemMeta shieldMeta = shieldButton.getItemMeta();
-        shieldMeta.setDisplayName(ChatColor.RED + "Shield");
+        inventory.setItem(0 + (9*0), itemFactory(Material.SNOWBALL, "Snowball", "1 dabloon"));
+        inventory.setItem(1 + (9*0), itemFactory(Material.SHIELD, "Shield", "5 dabloons"));
 
-        ArrayList<String> testLore = new ArrayList<>();
-        testLore.add("5 dabloons");
-        testLore.add("5 more dabloons");
-        shieldMeta.setLore(testLore);
 
-        shieldButton.setItemMeta(shieldMeta);
-
-        inventory.setItem(0, shieldButton);
+        inventory.setItem(0 + (9*2), itemFactory(Material.CARVED_PUMPKIN, "Snowman", "2 dabloons"));
+        inventory.setItem(1 + (9*2), itemFactory(Material.BONE, "Wolf", "4 dabloons"));
+        inventory.setItem(2 + (9*2), itemFactory(Material.IRON_INGOT, "Iron Golem", "10 dabloons"));
 
         inventory.setItem(8, closeButton);
         return true;
+    }
+
+    private ItemStack itemFactory(Material material, String displayName, String lore){
+        ItemStack itemButton = new ItemStack(material);
+        ItemMeta itemMeta = itemButton.getItemMeta();
+        itemMeta.setDisplayName(ChatColor.RED + displayName);
+        ArrayList<String> itemLore = new ArrayList<>();
+        itemLore.add(lore);
+        itemMeta.setLore(itemLore);
+        itemButton.setItemMeta(itemMeta);
+
+        return itemButton;
     }
 }
