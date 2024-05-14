@@ -42,7 +42,6 @@ public class Database {
 
     public boolean changePoints(Player player, int points){
         PlayerData playerData = this.get(player);
-        Bukkit.broadcastMessage(player.getDisplayName() + " has changed their points by " + points);
         if(playerData != null && playerData.points + points >= 0){
             playerData.points += points;
             return true;

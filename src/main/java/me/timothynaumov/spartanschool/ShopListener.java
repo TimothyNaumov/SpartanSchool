@@ -30,13 +30,22 @@ public class ShopListener implements Listener {
 
             // get the clicked item and perform actions
             switch(event.getSlot()){
-                case 0:
-                    System.out.println("Now we are trying to purchase a shield");
-                    String[] args = {"shield", "1"};
-                    this.gameLogic.handlePurchase(player, args);
+                case 0 + (9*0):
+                    this.gameLogic.handlePurchase(player, new String[]{"snowball"});
+                    break;
+                case 1 + (9*0):
+                    this.gameLogic.handlePurchase(player, new String[]{"shield"});
+                    break;
+                case 0 + (9*2):
+                    this.gameLogic.handlePurchase(player, new String[]{"snowman"});
+                    break;
+                case 1 + (9*2):
+                    this.gameLogic.handlePurchase(player, new String[]{"wolf"});
+                    break;
+                case 2 + (9*2):
+                    this.gameLogic.handlePurchase(player, new String[]{"irongolem"});
                     break;
                 case 8:
-                    System.out.println("Now we are trying to close the spartan shop");
                     player.closeInventory();
                     break;
             }
