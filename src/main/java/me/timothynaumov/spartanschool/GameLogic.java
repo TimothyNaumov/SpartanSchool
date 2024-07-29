@@ -1,5 +1,6 @@
 package me.timothynaumov.spartanschool;
 
+import me.timothynaumov.spartanschool.lobby.LobbyManager;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
@@ -26,12 +27,14 @@ public class GameLogic {
     public void handleMobDeath(Entity entity) {
         if(hostileMobs.contains(entity.getType())){
             enemyCount--;
-
+            System.out.println("MOB-DEATH: " + entity.getType() + " was hostile and has died: " + enemyCount + " mobs left\n");
             if (enemyCount == 0) {
                 Bukkit.broadcastMessage(ChatColor.GOLD + "Wave " + (waveCount - 1) + " has been completed! Press the button to start the next wave");
                 GameUtils.resetPlayersInBetweenRounds();
                 GameUtils.levelUp(waveCount);
             }
+        } else {
+            System.out.println("MOB-DEATH: " + entity.getType() + " WAS NOT a hostile mob: " + enemyCount + " mobs left\n");
         }
     }
 
@@ -42,10 +45,7 @@ public class GameLogic {
         database.changePoints((Player) damager, 1);
     }
 
-    public void handlePlayerDeath(Player player){
-        player.setGameMode(GameMode.SPECTATOR);
-        GameUtils.checkGameOver();
-    }
+
 
     public void handleButtonPress(Block block, Player player){
         if(block.getType() == Material.BIRCH_BUTTON){
@@ -63,7 +63,7 @@ public class GameLogic {
         World world = Bukkit.getWorlds().get(0);
 
         enemyCount = 0;
-        waveCount = 1;
+        waveCount = 6;
         playerSpawnLocation = new Location(world, -691, 4, 136);
         enemySpawnLocation = new Location(world, -707, 6, 136);
 
@@ -96,11 +96,14 @@ public class GameLogic {
         World world = Bukkit.getWorlds().get(0);
         Entity zombie = world.spawnEntity(enemySpawnLocation, EntityType.ZOMBIE);
         enemyCount ++;
+        System.out.println("Added a zombie, enemy count is now:" + enemyCount);
         Entity skeleton = world.spawnEntity(enemySpawnLocation, EntityType.SKELETON);
         enemyCount ++;
+        System.out.println("Added a skeleton, enemy count is now:" + enemyCount);
         if(waveCount >= 5 && r.nextBoolean()){
             Entity blaze = world.spawnEntity(enemySpawnLocation, EntityType.BLAZE);
             enemyCount ++;
+            System.out.println("Added a blaze, enemy count is now:" + enemyCount);
         }
     }
 
@@ -119,6 +122,7 @@ public class GameLogic {
         StringBuilder error = new StringBuilder();
         if(SpartanShop.purchase(player, itemName, quantity, error)){
             player.sendMessage(ChatColor.GREEN + "Successfully purchased " + quantity + " " + itemName + ". " + error);
+            System.out.println("Frienly mob has been added, " + enemyCount + " hostile mobs remain");
         } else {
             player.sendMessage(ChatColor.RED + error.toString());
         }

@@ -2,7 +2,6 @@ package me.timothynaumov.spartanschool;
 
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -59,14 +58,15 @@ public class GameUtils {
         }
     }
 
-    public static void checkGameOver(){
+    public static boolean isGameOver(){
         World world = Bukkit.getWorlds().get(0);
         for(Player player : world.getPlayers()){
             if(player.getGameMode() != GameMode.SPECTATOR){
-                return;
+                return false;
             }
         }
-        Bukkit.broadcastMessage(ChatColor.RED + "There were too many of them :(");
+        Bukkit.broadcastMessage(ChatColor.RED + "Game over");
+        return true;
     }
 
     public static void addPlayersToDatabase(Database db){

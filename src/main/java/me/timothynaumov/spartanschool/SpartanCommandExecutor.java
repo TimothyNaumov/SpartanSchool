@@ -15,11 +15,11 @@ public class SpartanCommandExecutor implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("spartanschool")) {
-            if(sender instanceof Player p){
-                gameLogic.startSpartanSchool();
-            }
-        }
+//        if (command.getName().equalsIgnoreCase("spartanschool")) {
+//            if(sender instanceof Player p){
+//                gameLogic.startSpartanSchool();
+//            }
+//        }
         if(command.getName().equalsIgnoreCase("balance")){
             if(sender instanceof Player p){
                 gameLogic.getBalance(p);
