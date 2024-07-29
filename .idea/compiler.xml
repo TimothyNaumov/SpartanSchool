@@ -9,8 +9,5 @@
         <module name="SpartanSchool" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SpartanSchool" target="16" />
-    </bytecodeTargetLevel>
   </component>
 </project>

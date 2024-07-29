@@ -48,7 +48,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3.1</version>
                 <configuration>
-                    <outputDirectory>C:\Users\Tim\minecraftcoding\1_16_5_spigot_server\plugins</outputDirectory>
+                    <outputDirectory>C:\Users\Tim\minecraftcoding\Spartan School Server\plugins</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

@@ -20,4 +20,5 @@ me\timothynaumov\spartanschool\GameUtils$1.class
 me\timothynaumov\spartanschool\shop\entity\IronGolem.class
 me\timothynaumov\spartanschool\shop\item\Shield.class
 me\timothynaumov\spartanschool\SpartanShop.class
+me\timothynaumov\spartanschool\lobby\LobbyManager.class
 me\timothynaumov\spartanschool\SpartanSchool.class
